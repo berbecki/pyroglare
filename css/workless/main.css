@@ -2680,6 +2680,19 @@ input[type="submit"].button.button-mini {
 #no-js-info span {text-align: center;margin: 0px auto; color:#f0d4d1;display: block;font-size:11px;}
 
 /* ==========================================================================
+Login classes
+========================================================================== */
+
+.login-screen {width:400px;margin:10% auto 10px;background: rgba(56,56,56,.3);padding:20px;-webkit-border-radius: 6px;border-radius: 6px;border: 1px solid #3e3e3e; border-bottom: 1px solid #575757; border-top: 1px solid #383838; }
+.login-screen ul {margin:0;padding:0;}
+.login-screen ul li {list-style-type: none;}
+.login-footer {text-align: center;}
+#login-un input, #login-pw input {width:386px;}
+#login-logo {width:30px;margin:0 auto 15px;}
+#login-save {margin-top:4px;color:#ccc;font-size:12px;}
+#login-remember {font-size:12px;}
+
+/* ==========================================================================
 Helper classes
 ========================================================================== */
 
