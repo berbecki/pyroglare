@@ -52,7 +52,7 @@
 			}
 			elseif (is_string($menu_item))
 			{
-				echo '<li><a href="'.site_url($menu_item).'" class="top-link no-submenu '.$classs.'">'.lang_label($key).'</a></li>';
+				echo '<li><a href="'.site_url($menu_item).'" class="top-link no-submenu '.$class.'">'.lang_label($key).'</a></li>';
 			}
 		}
 		?>
