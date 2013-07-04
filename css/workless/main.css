@@ -2683,13 +2683,15 @@ input[type="submit"].button.button-mini {
 Login classes
 ========================================================================== */
 
-.login-screen {width:400px;margin:10% auto 10px;background: rgba(56,56,56,.3);padding:20px;-webkit-border-radius: 6px;border-radius: 6px;border: 1px solid #3e3e3e; border-bottom: 1px solid #575757; border-top: 1px solid #383838; }
+.login-screen {width:400px;margin:10% auto 20px;background: rgba(56,56,56,.3);padding:20px;-webkit-border-radius: 6px;border-radius: 6px;border: 1px solid #3e3e3e; border-bottom: 1px solid #575757; border-top: 1px solid #383838;
+  -webkit-box-shadow: 0px 0px 40px 0px rgba(255, 255, 255, 0.05);
+box-shadow: 0px 0px 40px 0px rgba(255, 255, 255, 0.05);  }
 .login-screen ul {margin:0;padding:0;}
 .login-screen ul li {list-style-type: none;}
-.login-footer {text-align: center;}
+.login-footer {text-align: center;font-size:10px;text-shadow: 0 1px 0 rgba(0, 0, 0, 0.6);}
 #login-un input, #login-pw input {width:386px;}
 #login-logo {width:30px;margin:0 auto 15px;}
-#login-save {margin-top:4px;color:#ccc;font-size:12px;}
+#login-save {margin-top:4px;color:#ccc;font-size:12px;text-shadow: 0 1px 0 rgba(0, 0, 0, 0.6);}
 #login-remember {font-size:12px;}
 
 /* ==========================================================================
