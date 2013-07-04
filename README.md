@@ -1,4 +1,4 @@
 pyroglare
 =========
 
-new awesome CP theme for PyroCMS
+New awesome CP theme for PyroCMS.

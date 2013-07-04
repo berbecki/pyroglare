@@ -2,35 +2,36 @@
 
 class Theme_Pyroglare extends Theme {
 
-    public $name			= 'PikturoCMS - Admin Theme';
-    public $author			= 'PikturoCMS Dev Team';
+    public $name			= 'PyroGlare - Admin Theme';
+    public $author			= 'Pikturo Dev Team';
     public $author_website	= 'http://www.pikturo.pl/';
-    public $website			= 'http://www.pikturo.pl/';
-    public $description		= 'PikturoCMS admin theme. HTML5 and CSS3 styling.';
+    public $website			= 'https://github.com/beruniu/pyroglare';
+    public $description		= 'PyroGlare admin theme. HTML5 and CSS3 styling.';
     public $version			= '0.0.1';
 	public $type			= 'admin';
-	public $options 		= array('pikturo_recent_comments' => array('title' 		=> 'Recent Comments',
+	public $options 		= array(
+									'pyroglare_recent_comments' => array('title' 		=> 'Recent Comments',
 																'description'   => 'Would you like to display recent comments on the dashboard?',
 																'default'       => 'yes',
 																'type'          => 'radio',
 																'options'       => 'yes=Yes|no=No',
 																'is_required'   => true),
 																
-									'pikturo_news_feed' => 			array('title' => 'News Feed',
+									'pyroglare_news_feed' => 			array('title' => 'News Feed',
 																'description'   => 'Would you like to display the news feed on the dashboard?',
 																'default'       => 'yes',
 																'type'          => 'radio',
 																'options'       => 'yes=Yes|no=No',
 																'is_required'   => true),
 																
-									'pikturo_quick_links' => 		array('title' => 'Quick Links',
+									'pyroglare_quick_links' => 		array('title' => 'Quick Links',
 																'description'   => 'Would you like to display quick links on the dashboard?',
 																'default'       => 'yes',
 																'type'          => 'radio',
 																'options'       => 'yes=Yes|no=No',
 																'is_required'   => true),
 																
-									'pikturo_analytics_graph' => 	array('title' => 'Analytics Graph',
+									'pyroglare_analytics_graph' => 	array('title' => 'Analytics Graph',
 																'description'   => 'Would you like to display the graph on the dashboard?',
 																'default'       => 'yes',
 																'type'          => 'radio',
@@ -52,9 +53,9 @@ class Theme_Pyroglare extends Theme {
 		if ($this->module == '' && $this->method != 'login' && $this->method != 'help')
 		{
 			// don't bother fetching the data if it's turned off in the theme
-			if ($this->theme_options->pyrocms_analytics_graph == 'yes')		self::get_analytics();
-			if ($this->theme_options->pyrocms_news_feed == 'yes')			self::get_rss_feed();
-			if ($this->theme_options->pyrocms_recent_comments == 'yes')		self::get_recent_comments();
+			if ($this->theme_options->pyroglare_analytics_graph == 'yes')		self::get_analytics();
+			if ($this->theme_options->pyroglare_news_feed == 'yes')			self::get_rss_feed();
+			if ($this->theme_options->pyroglare_recent_comments == 'yes')		self::get_recent_comments();
 		}
 	}
 	
