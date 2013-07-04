@@ -1,4 +1,4 @@
-PyroGlare
+PyroGlare - dev verrsion 0.0.1
 =========
 New awesome CP theme for PyroCMS.
 
