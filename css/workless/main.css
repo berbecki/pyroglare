@@ -159,10 +159,12 @@ box-shadow: inset 0px 5px 10px -5px rgba(0, 0, 0, 0.8);border-bottom: 1px solid 
 }
 
 section.title h4 {margin-top:0;}
+.table-list {width:100%;}
+.table-list td {padding:4px 8px;}
 
 .content {margin:20px;}
-.content form ul {list-style-type: none;margin:0;padding:0;}
-.content form fieldset ul li {position: relative;padding: 15px 25px;background: #f9f9f9;margin: 0 0 1px;}
+.content form ul, form .content  ul {list-style-type: none;margin:0;padding:0;}
+.content form fieldset ul li, form .content fieldset ul li {position: relative;padding: 15px 25px;background: #f9f9f9;margin: 0 0 1px;}
 .subbar {position: relative;}
 .subbar-inner {
 background: #de4b37; /* Old browsers */
@@ -291,6 +293,18 @@ section.item {
 .button-menu-source {margin:-3px 0 0;padding:0;border-top:0 !important;}
 .folders-center {margin:0;padding:0;}
 #file-toolbar {}
+
+#available-widgets ul {margin:0;padding:0;}
+#available-widgets .widget-box {background:#fff;}
+#available-widgets .widget-box:hover {background:#D24632;-webkit-box-shadow:  0px 3px 6px -3px rgba(0, 0, 0, 0.6);box-shadow:  0px 3px 6px -3px rgba(0, 0, 0, 0.6);}
+#available-widgets .widget-box p {margin:0;font-size:11px;}
+#available-widgets .widget-box p span {font-size:12px;}
+#available-widgets .widget-box:hover p {color:#fff;}
+#available-widgets .widget-box:hover p span {color:#fff;}
+#available-widgets .widget-drag {-webkit-box-shadow:  0px 3px 6px -3px rgba(0, 0, 0, 0.6);box-shadow:  0px 3px 6px -3px rgba(0, 0, 0, 0.6);}
+
+li.empty-drop-item {-webkit-border-radius: 6px;border-radius: 6px;border-color: #d5d5d5 !important;}
+.drop-hover li.empty-drop-item {border-color: #444 !important;}
 
 #quick_links ul {margin:0;padding:0;}
 #quick_links ul li {list-style-type: none;float:left;margin:10px;}
