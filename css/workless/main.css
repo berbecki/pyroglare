@@ -126,6 +126,7 @@ nav#primary > ul.primary-nav > li ul li a.current {color:#D74834;}
 a.dash_current {border-left:3px solid #D74834}
 
 #box-menu ul li ul {display:none;}
+#box-menu ul li ul.has_open {display:block;}
 
 #logo {width:160px;margin:0;padding:0;}
 #logo div {margin:0 auto;padding:25px 0 20px;width:30px;height:30px;}

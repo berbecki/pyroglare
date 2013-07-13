@@ -115,6 +115,7 @@ jQuery(function($) {
 		//$(".primary-nav li ul").hide();
 		//$(".primary-nav li a.current").parent().find("ul").toggle();
 		$(".primary-nav li a.current").parent().parent().parent().find("a").addClass("has_current");
+		$(".primary-nav a.current").parent().parent().addClass("has_open");
 		//$(".primary-nav li a.current:not(.no-submenu)").addClass("bottom-border");
 
 		$(".primary-nav li a.top-link").click(function () {
