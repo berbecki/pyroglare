@@ -6,6 +6,11 @@
 * Kroc Camen, and the H5BP dev community and team.
 */
 @import url(http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,cyrillic-ext,latin-ext,greek-ext,greek,cyrillic);
+
+.options:before {
+  font-family: FontAwesome;
+  content: "\f013  ";
+}
 /* ==========================================================================
 Base styles: opinionated defaults
 ========================================================================== */
@@ -349,7 +354,7 @@ li.empty-drop-item {-webkit-border-radius: 6px;border-radius: 6px;border-color: 
 /* ==========================================================================
 Tables
 ========================================================================== */
-
+form table {width:100%;}
 table {
   max-width: 100%;
   background-color: #fff;
