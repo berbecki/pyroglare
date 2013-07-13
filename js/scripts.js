@@ -112,10 +112,10 @@ jQuery(function($) {
 		// Add class to dropdowns for styling
 		$("#box-menu ul li:has(ul)").children("a").addClass("menu");
 
-		$(".primary-nav li ul").hide();
-		$(".primary-nav li a.current").parent().find("ul").toggle();
+		//$(".primary-nav li ul").hide();
+		//$(".primary-nav li a.current").parent().find("ul").toggle();
 		$(".primary-nav li a.current").parent().parent().parent().find("a").addClass("has_current");
-		$(".primary-nav li a.current:not(.no-submenu)").addClass("bottom-border");
+		//$(".primary-nav li a.current:not(.no-submenu)").addClass("bottom-border");
 
 		$(".primary-nav li a.top-link").click(function () {
 			if($(this).hasClass("no-submenu"))
@@ -123,9 +123,7 @@ jQuery(function($) {
 				return false;
 			}
 			$(this).parent().siblings().find("ul").slideUp("normal");
-			$(this).parent().siblings().find("a").removeClass("bottom-border");
 			$(this).next().slideToggle("normal");
-			$(this).toggleClass("bottom-border");
 			return false;
 		});
 
