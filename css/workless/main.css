@@ -224,15 +224,22 @@ Sublayouts
 /* ==========================================================================
 Details
 ========================================================================== */
-#page-list ul {list-style-type: none;margin:0;padding:0;}
-#page-list .sortable li div {background:#515151 url(../../img/sort-menu.png) no-repeat left center;border-bottom: 1px solid #2A2A2A;border-top: 1px solid #fff;}
-#page-list .sortable li div a {color:#f2f2f2;margin-left:15px;text-shadow: 0px 1px 0px #000000;
+#page-list ul, #link-list ul {list-style-type: none;margin:0;padding:0;}
+#page-list .sortable li div, #link-list .sortable li div {background:#515151 url(../../img/sort-menu.png) no-repeat left center;border-bottom: 1px solid #2A2A2A;border-top: 1px solid #fff;}
+#page-list .sortable li div a, #link-list .sortable li div a {color:#f2f2f2;margin-left:15px;text-shadow: 0px 1px 0px #000000;
         filter: dropshadow(color=#000000, offx=0, offy=1);}
-#page-list .sortable li div a.selected {color:#fff;}
+#page-list .sortable li div a.selected, #link-list .sortable li div a.selected {color:#fff;}
 
 .ui-tabs {}
 .ui-tabs .tab-menu {margin:0;padding:0;}
 .ui-tabs .tab-menu li {list-style-type: none;}
+
+.box .title {background:#dad6d3;border-bottom: 1px solid #c4c1be;}
+.box .title ul {margin:0;padding:0;}
+.box .item {background: #efece9;}
+#link-details {}
+#link-details #details-container {padding:10px 10px;background:#f8f8f8;}
+#link-details #details-container .buttons {width:100%;}
 
 fieldset .ui-sortable {}
 fieldset .ui-sortable li {padding:10px 20px 10px 25px;position: relative;background: #f9f9f9;border-bottom: 1px solid #fff;}
