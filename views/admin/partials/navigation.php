@@ -19,13 +19,8 @@
 							c0.538,1.363-0.033,2.215-0.73,3.135C19.109,21.357,20.354,23.543,19.451,24.987z"/>
 		</svg></div>
 	</li>
-	<li id="dashboard-link"><?php echo anchor('admin', lang('global:dashboard'), 'class="top-link no-submenu '.( ! $this->module ? 'current ' : '').'"') ?></li>
-
-		<?php 
-		// Display the menu items.
-		// We have already vetted them for permissions
-		// in the Admin_Controller, so we can just
-		// display them now.
+	<li id="dashboard-link"><?php echo anchor('admin', lang('global:dashboard'), 'class="top-link no-submenu"') ?></li>
+<?php 
 		foreach ($menu_items as $key => $menu_item)
 		{
 			if (is_array($menu_item))
@@ -55,6 +50,5 @@
 				echo '<li><a href="'.site_url($menu_item).'" class="top-link no-submenu '.$class.'">'.lang_label($key).'</a></li>';
 			}
 		}
-		?>
-
+?>
 </ul>

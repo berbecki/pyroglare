@@ -3,87 +3,8 @@
 
 	<!-- Dashboard Widgets -->
 	{{ widgets:area slug="dashboard" }}
-	
-	<!-- Begin Quick Links -->
-	<?php if ($theme_options->pyrocms_quick_links == 'yes') : ?>
-	<div class="one_full">
-		
-		<section class="draggable title">
-			<h4><?php echo lang('cp:admin_quick_links') ?></h4>
-			<a class="tooltip-s toggle" title="Toggle this element"></a>
-		</section>
-		
-		<section id="quick_links" class="item <?php echo isset($rss_items) ?>">
-			<div class="content">
-				<ul>
-					<?php if((array_key_exists('comments', $this->permissions) OR $this->current_user->group == 'admin') AND module_enabled('comments')): ?>
-					<li>
-						<a class="tooltip-s" title="<?php echo lang('cp:manage_comments') ?>" href="<?php echo site_url('admin/comments') ?>"><?php echo Asset::img('icons/comments.png', lang('cp:manage_comments')) ?></a>
-					</li>
-					<?php endif ?>
-					
-					<?php if((array_key_exists('pages', $this->permissions) OR $this->current_user->group == 'admin') AND module_enabled('pages')): ?>
-					<li>
-						<a class="tooltip-s" title="<?php echo lang('cp:manage_pages') ?>" href="<?php echo site_url('admin/pages') ?>"><?php echo Asset::img('icons/pages.png', lang('cp:manage_pages')) ?></a>
-					</li>
-					<?php endif ?>
-					
-					<?php if((array_key_exists('files', $this->permissions) OR $this->current_user->group == 'admin') AND module_enabled('files')): ?>
-					<li>
-						<a class="tooltip-s" title="<?php echo lang('cp:manage_files') ?>" href="<?php echo site_url('admin/files') ?>"><?php echo Asset::img('icons/files.png', lang('cp:manage_files')) ?></a>
-					</li>
-					<?php endif ?>
-					
-					<?php if(array_key_exists('users', $this->permissions) OR $this->current_user->group == 'admin'): ?>
-					<li>
-						<a class="tooltip-s" title="<?php echo lang('cp:manage_users') ?>" href="<?php echo site_url('admin/users') ?>"><?php echo Asset::img('icons/users.png', lang('cp:manage_users')) ?></a>
-					</li>
-					<?php endif ?>
-				</ul>
-			</div>
-		</section>
 
-	</div>	
-	<?php endif ?>
-	<!-- End Quick Links -->
-
-	<!-- Begin Recent Comments -->
-	<?php if (isset($recent_comments) AND is_array($recent_comments) AND $theme_options->pyrocms_recent_comments == 'yes') : ?>
-	<div class="one_full">
-		
-		<section class="draggable title">
-			<h4><?php echo lang('comments:recent_comments') ?></h4>
-			<a class="tooltip-s toggle" title="Toggle this element"></a>
-		</section>
-		
-		<section class="item">
-			<div class="content">
-				<ul id="widget-comments">
-
-					<?php if (count($recent_comments)): ?>
-						<?php foreach ($recent_comments as $comment): ?>
-							<li>
-								<div class="comments-gravatar"><?php echo gravatar($comment->user_email) ?></div>
-								<div class="comments-date"><?php echo format_date($comment->created_on) ?></div>
-								<p>
-									<?php echo sprintf(lang('comments:list_comment'), $comment->user_name, $comment->entry_title) ?> 
-									<span><?php echo (Settings::get('comment_markdown') AND $comment->parsed > '') ? strip_tags($comment->parsed) : $comment->comment ?></span>
-								</p>
-							</li>
-						<?php endforeach ?>
-					<?php else: ?>
-						<?php echo lang('comments:no_comments') ?>
-					<?php endif ?>
-				</ul>
-			</div>
-		</section>
-
-	</div>		
-	<?php endif ?>
-	<!-- End Recent Comments -->
-		
-	
-	<?php if ((isset($analytic_visits) OR isset($analytic_views)) AND $theme_options->pyrocms_analytics_graph == 'yes'): ?>
+	<?php if ((isset($analytic_visits) OR isset($analytic_views)) AND $theme_options->pyroglare_analytics_graph == 'yes'): ?>
 	<script type="text/javascript">
 	
 	$(function($) {
@@ -91,17 +12,18 @@
 			var views = <?php echo isset($analytic_views) ? $analytic_views : 0 ?>;
 	
 			var buildGraph = function() {
-				$.plot($('#analytics'), [{ label: 'Visits', data: visits },{ label: 'Page views', data: views }], {
+				$.plot($('#analytics'), [{ label: 'Visits - <?php echo isset($visitsall) ? array_sum($visitsall) : 0 ?>', data: visits },{ label: 'Page views - <?php echo isset($viewsall) ? array_sum($viewsall) : 0 ?>', data: views }], {
 					lines: { show: true },
 					points: { show: true },
-					grid: { hoverable: true, backgroundColor: '#fefefe' },
+					grid: { hoverable: true, backgroundColor: "#f8f7f6", color: "#999999" },
 					series: {
 						lines: { show: true, lineWidth: 1 },
 						shadowSize: 0
 					},
-					xaxis: { mode: "time" },
+					xaxis: { mode: "time", timezone:"timezone", timeformat: "%m/%d" },
 					yaxis: { min: 0},
-					selection: { mode: "x" }
+					selection: { mode: "x" },
+					legend: { position: "nw", margin: [0, 0] }
 				});
 			}
 			// create the analytics graph when the page loads
@@ -167,9 +89,90 @@
 	
 	<?php endif ?>
 	<!-- End Analytics -->
+	
+	<!-- Begin Quick Links -->
+	<?php if ($theme_options->pyroglare_quick_links == 'yes') : ?>
+	<div class="one_full">
+		
+		<section class="draggable title">
+			<h4><?php echo lang('cp:admin_quick_links') ?></h4>
+			<a class="tooltip-s toggle" title="Toggle this element"></a>
+		</section>
+		
+		<section id="quick_links" class="item <?php echo isset($rss_items) ?>">
+			<div class="content">
+				<ul>
+					<?php if((array_key_exists('comments', $this->permissions) OR $this->current_user->group == 'admin') AND module_enabled('comments')): ?>
+					<li>
+						<a class="tooltip-s" title="<?php echo lang('cp:manage_comments') ?>" href="<?php echo site_url('admin/comments') ?>"><?php echo Asset::img('icons/comments.png', lang('cp:manage_comments')) ?></a>
+					</li>
+					<?php endif ?>
+					
+					<?php if((array_key_exists('pages', $this->permissions) OR $this->current_user->group == 'admin') AND module_enabled('pages')): ?>
+					<li>
+						<a class="tooltip-s" title="<?php echo lang('cp:manage_pages') ?>" href="<?php echo site_url('admin/pages') ?>"><?php echo Asset::img('icons/pages.png', lang('cp:manage_pages')) ?></a>
+					</li>
+					<?php endif ?>
+					
+					<?php if((array_key_exists('files', $this->permissions) OR $this->current_user->group == 'admin') AND module_enabled('files')): ?>
+					<li>
+						<a class="tooltip-s" title="<?php echo lang('cp:manage_files') ?>" href="<?php echo site_url('admin/files') ?>"><?php echo Asset::img('icons/files.png', lang('cp:manage_files')) ?></a>
+					</li>
+					<?php endif ?>
+					
+					<?php if(array_key_exists('users', $this->permissions) OR $this->current_user->group == 'admin'): ?>
+					<li>
+						<a class="tooltip-s" title="<?php echo lang('cp:manage_users') ?>" href="<?php echo site_url('admin/users') ?>"><?php echo Asset::img('icons/users.png', lang('cp:manage_users')) ?></a>
+					</li>
+					<?php endif ?>
+				</ul>
+			</div>
+		</section>
+
+	</div>	
+	<?php endif ?>
+	<!-- End Quick Links -->
+
+	<!-- Begin Recent Comments -->
+	<?php if (isset($recent_comments) AND is_array($recent_comments) AND $theme_options->pyroglare_recent_comments == 'yes') : ?>
+	<div class="one_full">
+		
+		<section class="draggable title">
+			<h4><?php echo lang('comments:recent_comments') ?></h4>
+			<a class="tooltip-s toggle" title="Toggle this element"></a>
+		</section>
+		
+		<section class="item">
+			<div class="content">
+				<ul id="widget-comments">
+
+					<?php if (count($recent_comments)): ?>
+						<?php foreach ($recent_comments as $comment): ?>
+							<li class="clearfix">
+								<div class="comments-gravatar"><?php echo gravatar($comment->user_email) ?></div>
+								<div class="comments-date"><?php echo format_date($comment->created_on) ?></div>
+								<div class="comments-text">
+									<h5><?php echo sprintf(lang('comments:list_comment'), $comment->user_name, $comment->entry_title) ?></h5>
+									<span><?php echo (Settings::get('comment_markdown') AND $comment->parsed > '') ? strip_tags($comment->parsed) : $comment->comment ?></span>
+								</div>
+							</li>
+						<?php endforeach ?>
+					<?php else: ?>
+						<?php echo lang('comments:no_comments') ?>
+					<?php endif ?>
+				</ul>
+			</div>
+		</section>
+
+	</div>		
+	<?php endif ?>
+	<!-- End Recent Comments -->
+		
+	
+	
 
 	<!-- Begin RSS Feed -->
-	<?php if ( isset($rss_items) AND $theme_options->pyrocms_news_feed == 'yes') : ?>
+	<?php if ( isset($rss_items) AND $theme_options->pyroglare_news_feed == 'yes') : ?>
 	<div id="feed" class="one_full">
 		
 		<section class="draggable title">
@@ -181,7 +184,7 @@
 			<div class="content">
 				<ul>
 					<?php foreach($rss_items as $rss_item): ?>
-					<li>
+					<li class="clearfix">
 							
 						<?php
 							$item_date	= strtotime($rss_item->get_date());
@@ -202,7 +205,7 @@
 						<div class="post">
 							<h4><?php echo anchor($rss_item->get_permalink(), $rss_item->get_title(), 'target="_blank"') ?></h4>
 													
-							<p class='item_body'><?php echo $rss_item->get_description() ?></p>
+							<p class='item_body clearfix'><?php echo $rss_item->get_description() ?></p>
 						</div>
 					</li>
 					<?php endforeach ?>

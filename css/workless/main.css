@@ -306,8 +306,31 @@ section.item {
 li.empty-drop-item {-webkit-border-radius: 6px;border-radius: 6px;border-color: #d5d5d5 !important;}
 .drop-hover li.empty-drop-item {border-color: #444 !important;}
 
+#analytics {height:240px;width:100%;position: relative;}
+.legend {}
+.legend table {width:auto;background:none !important;}
+.legend table td {padding: 3px 6px !important;line-height: 1.1 !important;border-top:none !important;}
+
 #quick_links ul {margin:0;padding:0;}
 #quick_links ul li {list-style-type: none;float:left;margin:10px;}
+
+#feed {}
+#feed ul {margin:0;padding:0;}
+#feed ul li {list-style-type:none;margin-bottom:20px;position: relative;}
+#feed ul li .date {width:40px;background:#fff;position: absolute; top:0;left:0;}
+#feed ul li .month {width:40px;text-align:center;display:block;padding:2px 0 3px;font-size:11px;line-height: 11px;text-transform:uppercase;background:#454545;color:#fff;}
+#feed ul li .day {width:40px;text-align:center;display:block;padding:6px 0;font-size:20px;line-height: 20px;color:#454545;}
+#feed ul li .post {margin-left:55px;}
+#feed ul li .post > h4 {margin:0 0 20px 0;padding:2px 0 3px 10px;font-size:11px;line-height: 11px;text-transform:uppercase;background:#454545;color:#fff;}
+#feed ul li .post > h4 a {color:#fff;}
+
+#widget-comments {margin:0;padding:0;}
+#widget-comments li {list-style-type:none;margin-bottom:20px;position: relative;}
+#widget-comments li .comments-gravatar {float: left;margin-right:10px;}
+#widget-comments li .comments-date {float:right;font-style:italic;color:#999694;}
+.comments-text {}
+.comments-text h5 {font-size:13px;font-weight:bold;margin:15px 0 18px;}
+.comments-text span {background:#fff;}
 
 .no_data {background: #fff;text-align: center;padding:10px;}
 
@@ -326,7 +349,6 @@ table {
 }
 
 .table, .content table {
-  width: 100%;
   margin-bottom: 20px;
 }
 

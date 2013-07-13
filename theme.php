@@ -68,6 +68,8 @@ class Theme_Pyroglare extends Theme {
 			{
 				$data['analytic_visits'] = $cached_response['analytic_visits'];
 				$data['analytic_views'] = $cached_response['analytic_views'];
+				$data['visitsall'] = $cached_response['visitsall'];
+				$data['viewsall'] = $cached_response['viewsall'];
 			}
 
 			else
@@ -111,9 +113,11 @@ class Theme_Pyroglare extends Theme {
 
 					$data['analytic_visits'] = $flot_data_visits;
 					$data['analytic_views'] = $flot_data_views;
+					$data['visitsall'] = $visits;
+					$data['viewsall'] = $views;
 
 					// Call the model or library with the method provided and the same arguments
-					$this->pyrocache->write(array('analytic_visits' => $flot_data_visits, 'analytic_views' => $flot_data_views), 'analytics', 60 * 60 * 6); // 6 hours
+					$this->pyrocache->write(array('analytic_visits' => $flot_data_visits, 'analytic_views' => $flot_data_views, 'visitsall' => $visits, 'viewsall' => $views), 'analytics', 60 * 60 * 6); // 6 hours
 				}
 
 				catch (Exception $e)
