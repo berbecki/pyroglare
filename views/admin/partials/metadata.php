@@ -1,12 +1,8 @@
 <?php
 Asset::css('plugins.css');
 Asset::css('workless/font-awesome.min.css');
-//Asset::css('workless/workless.css');
-//Asset::css('workless/application.css');
-//Asset::css('workless/responsive.css');
 Asset::css('workless/normalize.css');
 Asset::css('workless/main.css');
-
 Asset::js('modernizr.js');
 Asset::js('jquery/jquery.js');
 Asset::js_inline('jQuery.noConflict();');
