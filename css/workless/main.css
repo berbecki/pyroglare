@@ -11,6 +11,10 @@
   font-family: FontAwesome;
   content: "\f013  ";
 }
+.add:before {
+  font-family: FontAwesome;
+  content: "\f055  ";
+}
 /* ==========================================================================
 Base styles: opinionated defaults
 ========================================================================== */
@@ -308,6 +312,11 @@ section.item {
 .button-menu-source {margin:-3px 0 0;padding:0;border-top:0 !important;}
 .folders-center {margin:0;padding:0;}
 #file-toolbar {}
+
+.modal_select {margin: 0;padding: 0;}
+.modal_select li {list-style-type: none;display: block;margin:2px 0;}
+.modal_select li a {display: block; background:#9D3425;color:#fff;-webkit-border-radius: 3px;border-radius: 3px;padding:5px 10px;font-size:12px;}
+.modal_select li a:hover {background:#8d2f21;}
 
 #available-widgets ul {margin:0;padding:0;}
 #available-widgets .widget-box {background:#fff;}

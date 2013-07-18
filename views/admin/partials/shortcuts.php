@@ -7,7 +7,7 @@
 				$uri	= $shortcut['uri'];
 				unset($shortcut['name']);
 				unset($shortcut['uri']); ?>
-			<li><a class="btn add" <?php foreach ($shortcut as $attr => $value) echo $attr.'="'.$value.'"'; echo 'href="' . site_url($uri) . '"><i class="icon-plus-sign"></i> ' . lang($name) . '</a>'; ?></li>
+			<li><a <?php foreach ($shortcut as $attr => $value) echo $attr.'="'.$value.' btn"'; echo 'href="' . site_url($uri) . '">' . lang($name) . '</a>'; ?></li>
 			<?php endforeach; ?>
 		<?php endif; ?>
 		
@@ -17,7 +17,7 @@
 				$uri	= $shortcut['uri'];
 				unset($shortcut['name']);
 				unset($shortcut['uri']); ?>
-			<li><a class="btn add" <?php foreach ($shortcut as $attr => $value) echo $attr.'="'.$value.'"'; echo 'href="' . site_url($uri) . '"><i class="icon-plus-sign"></i> ' . lang($name) . '</a>'; ?></li>
+			<li><a <?php foreach ($shortcut as $attr => $value) echo $attr.'="'.$value.' btn"'; echo 'href="' . site_url($uri) . '">' . lang($name) . '</a>'; ?></li>
 			<?php endforeach; ?>
 		<?php endif; ?>
 	</ul>
