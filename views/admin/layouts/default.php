@@ -78,6 +78,7 @@
 	
 	</div>
 </div>
+<div id="resp-menu"><div class="btn resp-menu-toogle pull-right">MENU</div></div>
 <div id="box-general">
 	<div id="box-row">
 		<div id="box-menu">

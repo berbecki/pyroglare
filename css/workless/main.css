@@ -115,7 +115,7 @@ Author's custom styles
 #box-menu {display:table-cell;background: rgba(0,0,0,.3);vertical-align: top;}
 #box-content {display:table-cell;background:#fff;width:100%;padding:0;-webkit-box-shadow:  0px 0px 10px 0px rgba(0, 0, 0, 0.7);box-shadow:  0px 0px 10px 0px rgba(0, 0, 0, 0.7);}
 
-#tools {width:96%;margin:15px 2% 0px;}
+#tools {width:96%;margin:15px 2% 5px;}
 #nav-search {background:rgba(0, 0, 0, 0.3) !important;border:1px solid #535353;border-bottom:1px solid #5e5e5e;border-top:1px solid #535353;color:#797979;position:relative;}
 
 #container {display:table;width:100%;}
@@ -133,6 +133,12 @@ nav#primary > ul.primary-nav > li ul li a {color:#f2f2f2;text-shadow: 0px 1px 0p
         filter: dropshadow(color=#000000, offx=0, offy=1);margin-top:3px;margin-bottom:3px;display: block;}
 nav#primary > ul.primary-nav > li ul li a.current {color:#D74834;}
 a.dash_current {border-left:3px solid #D74834}
+
+.topbar-search {margin-bottom:4px;}
+
+#menu-responsive {margin: 5px 2%;width: 96%;display: none;}
+#menu-responsive a {display: block;background: #323232;margin:0 0 2px;padding:3px 10px;color:#D84834;}
+.resp-menu-toogle {margin-top:-33px;margin-right:2%;}
 
 #box-menu ul li ul {display:none;}
 #box-menu ul li ul.has_open {display:block;}
@@ -2854,6 +2860,7 @@ Helper classes
 .clearfix {
     *zoom: 1;
 }
+#resp-menu {display: none;}
 
 /* ==========================================================================
 EXAMPLE Media Queries for Responsive Design.
@@ -2864,6 +2871,25 @@ Modify as content requires.
 @media only screen and (min-width: 35em) {
     /* Style adjustments for viewports that meet the condition */
 }
+
+    /* Large desktop */
+    @media (min-width: 1200px) {
+      
+    }
+     
+    /* Portrait tablet to landscape and desktop */
+    @media (min-width: 768px) and (max-width: 979px) {
+      
+    }
+     
+    /* Landscape phone to portrait tablet */
+    @media (max-width: 767px) { 
+      nav#primary, .topbar-search {display: none;}
+      #resp-menu {display: block;}
+    }
+     
+    /* Landscape phones and down */
+    @media (max-width: 480px) {  }
 
 @media print,
        (-o-min-device-pixel-ratio: 5/4),

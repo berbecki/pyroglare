@@ -74,14 +74,13 @@ jQuery(function($) {
 	pyro.init = function() {
 
 		// Select menu for smaller screens
-		$("<select />").appendTo("nav#primar");
+		$("<div id='menu-responsive'></div>").appendTo("#resp-menu");
 
 		// Create default option "Menu"
-		$("<option />", {
-   			"selected": "selected",
+		$("<a class='menu-responsive-list'></a>", {
+   			"rel": "selected",
    			"value"   : "",
-   			"text"    : "Menu"
-		}).appendTo("nav#primary select");
+		}).appendTo("#menu-responsiv");
 
 		$('#lang .selected a').click(function(){return false;});
 		$('#lang .selected a').click(function(){
@@ -91,10 +90,14 @@ jQuery(function($) {
 		// Populate dropdown with menu items
 		$("nav#primary a:not(.top-link)").each(function() {
 		 	var el = $(this);
- 			$("<option />", {
-     			"value"   : el.attr("href"),
+ 			$("<a></a>", {
+     			"href"   : el.attr("href"),
      			"text"    : el.text()
- 			}).appendTo("nav#primary select");
+ 			}).appendTo("#menu-responsive");
+		});
+
+		$(".resp-menu-toogle").click(function() {
+			$("#menu-responsive").slideToggle("normal");
 		});
 
 		$("nav#primary select").change(function() {
