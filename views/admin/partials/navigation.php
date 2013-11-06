@@ -19,7 +19,7 @@
 							c0.538,1.363-0.033,2.215-0.73,3.135C19.109,21.357,20.354,23.543,19.451,24.987z"/>
 		</svg></div>
 	</li>
-	<?php if($this->uri->segment(2) == '') { $dashboard = 'dash_current';} ; ?>
+	<?php $dashboard = $this->uri->segment(2) == '' ? 'dash_current' : ''; ?>
 	<li id="dashboard-link"><?php echo anchor('admin', lang('global:dashboard'), 'class="top-link no-submenu '.$dashboard.'"') ?></li>
 <?php 
 		foreach ($menu_items as $key => $menu_item)
